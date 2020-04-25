@@ -3,6 +3,7 @@
 apt update && \
 apt install \
 gcc \
+g++ \
 vim \
 git \
 ruby \
