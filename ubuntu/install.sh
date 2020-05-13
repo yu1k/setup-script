@@ -13,4 +13,10 @@ nmap \
 grep \
 screenfetch \
 sysstat \
-net-tools
+net-tools \
+
+#前提ソフトウェア
+apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
