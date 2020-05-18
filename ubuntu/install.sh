@@ -11,6 +11,7 @@ ssh \
 ufw \
 nmap \
 grep \
+curl \
 screenfetch \
 sysstat \
 net-tools \
