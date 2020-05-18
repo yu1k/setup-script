@@ -14,3 +14,4 @@ grep \
 screenfetch \
 sysstat \
 net-tools \
+traceroute \
