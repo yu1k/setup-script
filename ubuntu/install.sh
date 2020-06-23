@@ -1,7 +1,8 @@
 #!/bin/sh
 
 apt update && \
-apt install \
+apt upgrade -y && \
+apt install -y \
 gcc \
 g++ \
 vim \
@@ -15,4 +16,7 @@ curl \
 screenfetch \
 sysstat \
 net-tools \
-traceroute \
+traceroute
+
+#処理が完了した時のメッセージ
+echo "Completed to processing."
