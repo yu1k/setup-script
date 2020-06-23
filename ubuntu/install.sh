@@ -13,6 +13,7 @@ ufw \
 nmap \
 grep \
 curl \
+tmux \
 screenfetch \
 sysstat \
 net-tools \
