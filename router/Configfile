@@ -13,6 +13,11 @@
 ip lan1 address 192.168.0.1/24
 
 #
+# WAN(ISP)インターフェースの設定
+#
+# あとで書く
+
+#
 # NATの設定
 #
 nat descriptor type 1 masquerade
