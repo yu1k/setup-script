@@ -16,3 +16,10 @@ ip lan1 address 192.168.0.1/24
 # NATの設定
 #
 nat descriptor type 1 masquerade
+
+#
+# DHCPの設定
+#
+dhcp service server
+dhcp server rfc2131 compliant except remain-silent
+dhcp scope 1 192.168.0.2-192.168.0.100/24
