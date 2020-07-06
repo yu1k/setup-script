@@ -17,7 +17,8 @@ tmux \
 screenfetch \
 sysstat \
 net-tools \
-traceroute
+traceroute \
+iftop
 
 #処理が完了した時のメッセージ
 echo "Completed to processing."
