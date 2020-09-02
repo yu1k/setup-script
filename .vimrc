@@ -5,4 +5,4 @@ set number
 set autoindent
 
 "tab幅をスペース2つ分にする
-set tabstop=2
+set tabstop=4
