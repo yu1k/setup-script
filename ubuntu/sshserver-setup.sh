@@ -43,7 +43,7 @@ sudo vim /etc/ssh/sshd_config
 read -p "Hit enter: "
 
 # sshdの再起動
-service sshd restart
+sudo service sshd restart
 
 # 処理が完了したことを表示
 echo "Processing... Done"
