@@ -28,7 +28,7 @@ sudo ufw status
 
 sudo ufw allow [開放するポート番号]
 
-sudo reload
+sudo ufw reload
 
 sudo ufw status
 
