@@ -36,8 +36,6 @@ sudo ufw status
 # バックアップ
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old
 
-sudo su -
-
 # SShで使用するポートなどの設定をする
 sudo vim /etc/ssh/sshd_config
 
