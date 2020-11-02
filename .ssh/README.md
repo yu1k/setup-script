@@ -12,4 +12,5 @@ Host server
     IdentityFile [秘密鍵ファイルへのPATH]
     ServerAliveInterval 60
     ServerAliveCountMax 3
+    TCPKeepAlive yes
 ```
