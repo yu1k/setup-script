@@ -17,6 +17,7 @@ tmux \
 screenfetch \
 sysstat \
 net-tools \
+htop \
 traceroute \
 iftop
 
