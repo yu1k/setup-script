@@ -4,6 +4,8 @@ bin/
 
 .DS_Store
 
+.vscode/
+
 # How to use
 # Execute the this command to set up.
 # git config --global core.excludesfile ~/.gitignore_global
