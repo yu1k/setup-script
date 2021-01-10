@@ -23,6 +23,7 @@ curl https://github.com/yu1k.keys > .ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
 # Change ssh settings
+echo 'Port 22222' >> /etc/ssh/sshd_config
 echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
 echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config
 
