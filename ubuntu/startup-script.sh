@@ -4,6 +4,8 @@ set -x
 
 export DEBIAN_FRONTEND=noninteractive
 
+apt update && apt upgrade -y
+
 # Set Firewall
 if [ -e "/etc/network/if-pre-up.d/iptables" ]; then
     rm -f /etc/network/if-pre-up.d/iptables
