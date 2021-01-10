@@ -29,4 +29,22 @@ echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config
 # SSHコンフィグを再起動
 /etc/init.d/ssh restart
 
+# 各種コマンドをインストール
+apt install -y \
+gcc \
+vim \
+git \
+nmap \
+grep \
+tmux \
+screenfetch \
+sysstat \
+net-tools \
+htop \
+traceroute \
+iftop
+
+#処理が完了した時のメッセージ
+echo "Completed to processing."
+
 reboot
