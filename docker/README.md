@@ -1,5 +1,9 @@
 # docker
 
+- 環境
+  - OS: Ubuntu18.04
+  - シェル: bash
+
 ## Dockerのインストール
 
 このREADMEと同じ階層にある [セットアップスクリプト](./setup.sh) を実行する。
