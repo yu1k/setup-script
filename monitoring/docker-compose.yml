@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  prometheus_server:
+    tty: true
+    image: prom/prometheus
+    container_name: prometheus_server
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      # /etc/prometheus/data を promdataディレクトリとマウント
+      - ./prometheus/promdata:/etc/prometheus/data
+    restart: always
+
+  grafana:
+    tty: true
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - 3000:3000
+    env_file:
+      - ./grafana/grafana.env
+    volumes:
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+    restart: always
+    
+  # ホストを監視用の Node Exporter
+  node_exporter:
+    tty: true
+    image: prom/node-exporter
+    container_name: node_exporter
+    ports:
+      - 9100:9100
+    volumes:
+      - /proc:/host/proc
+      - /sys:/host/sys
+      - /:/rootfs
+    restart: always
