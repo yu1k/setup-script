@@ -1,0 +1,88 @@
+modules:
+  # Default IF-MIB interfaces table with ifIndex.
+  if_mib:
+    walk: [sysUpTime, interfaces, ifXTable]
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: ifAlias
+      - source_indexes: [ifIndex]
+        # Uis OID to avoid conflict with PaloAlto PAN-COMMON-MIB.
+        lookup: 1.3.6.1.2.1.2.2.1.2 # ifDescr
+      - source_indexes: [ifIndex]
+        # Use OID to avoid conflict with Netscaler NS-ROOT-MIB.
+        lookup: 1.3.6.1.2.1.31.1.1.1.1 # ifName
+    overrides:
+      ifAlias:
+        ignore: true # Lookup metric
+      ifDescr:
+        ignore: true # Lookup metric
+      ifName:
+        ignore: true # Lookup metric
+      ifType:
+        type: EnumAsInfo
+    version: 1
+    auth:
+      community: public
+  
+
+  #######################################################################
+  # RTX1200の generator コンフィグ
+  # - RFC1213
+  # - YAMAHA private MIB: http://www.rtpro.yamaha.co.jp/RT/docs/mib/
+  # から拾います
+  #######################################################################
+  rtx1200:
+    version: 1
+    auth:
+      community: public
+    walk:
+      # 機器の説明。機器名と、ファームウェアリビジョン
+      - sysDescr
+      # ヤマハプライベートMIBで定義されている、機器のOID
+      - sysObjectID
+      # 起動からの経過時間
+      - sysUpTime
+      
+      #
+      # システム情報
+      #
+      # CPU使用率(5秒間隔)
+      - yrhCpuUtil5sec
+      # CPU使用率(1分間隔)
+      - yrhCpuUtil1min
+      # CPU使用率(5分間隔)
+      - yrhCpuUtil5min
+      # ファームウェアバージョン
+      - yrfRevision
+      # 筐体温度
+      - yrhInboxTemperature
+      # 起動からの経過時間
+      - yrfUpTime
+      # メモリ使用率
+      - yrhMemoryUtil
+      # メモリサイズ(Grafanaで見るときは、 (出力されたサイズ/1024)/1024) して MB 表示させる)
+      - yrhMemorySize
+
+
+      #
+      # Arart情報
+      #
+      # リンクダウン時に通知
+      - linkDown
+      # リンクアップ時に通知
+      - linkUp
+
+  ###############################################################
+  # NEC IX シリーズの generator コンフィグ
+  ###############################################################
+  nec_ix:
+    walk:
+      - picoSystem
+      - picoIpSecFlowMonitorMIB
+      - picoExtIfMIB
+      - picoNetworkMonitorMIB
+      - picoIsdnMIB
+      - picoNgnMIB
+      - picoMobileMIB
+      - picoIPv4MIB
+      - picoIPv6MIB
