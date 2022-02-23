@@ -1,0 +1,28 @@
+####################
+# author by yu1k
+####################
+
+#
+# 文字コードの設定
+#
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+
+#
+# エスケープキーの設定
+# デフォルトの Ctrl+k から Ctrl+b キーに変更
+escape ^Bb
+
+#
+# スクロールの設定
+#
+# scrollback 可能な行数を10000行に設定 ( macOSのターミナルのデフォルトでは `使用可能なメモリに制限` になっていました。screenを使用した際には明示的に設定するようにします。 )
+defscrollback 10000
+# マウスでスクロールできるように設定
+termcapinfo xterm* ti@:te@
+
+#
+# カラー
+# TODO: あとで設定する
+# term xterm-256color
